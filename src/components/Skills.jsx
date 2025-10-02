@@ -29,19 +29,21 @@ const Skills = () => {
         { name: 'React', level: 100, color: 'from-blue-400 to-blue-600' },
         { name: 'JavaScript', level: 100, color: 'from-yellow-400 to-yellow-600' },
         { name: 'TypeScript', level: 100, color: 'from-blue-500 to-blue-700' },
+        { name: 'Next.js', level: 100, color: 'from-gray-400 to-gray-600' },
+        { name: 'Vite', level: 100, color: 'from-blue-500 to-blue-700' },
+        { name: 'Redux', level: 100, color: 'from-green-400 to-green-600' },
         { name: 'HTML5', level: 100, color: 'from-orange-400 to-orange-600' },
         { name: 'CSS3', level: 100, color: 'from-blue-300 to-blue-500' },
         { name: 'Tailwind CSS', level: 100, color: 'from-cyan-400 to-cyan-600' },
         { name: 'Ant Design', level: 100, color: 'from-cyan-400 to-cyan-600' },
-        { name: 'Next.js', level: 100, color: 'from-gray-400 to-gray-600' },
-        { name: 'Redux', level: 100, color: 'from-green-400 to-green-600' }
       ]
     },
     backend: {
       title: 'Backend Development',
       skills: [
-        { name: 'PostgreSQL', level: 100, color: 'from-blue-400 to-blue-600' },
         { name: 'Firebase', level: 100, color: 'from-orange-400 to-orange-600' },
+        { name: 'Vercel API', level: 100, color: 'from-orange-400 to-orange-600' },
+        { name: 'PostgreSQL', level: 100, color: 'from-blue-400 to-blue-600' },
       ]
     },
     tools: {
@@ -50,7 +52,6 @@ const Skills = () => {
         { name: 'Git', level: 100, color: 'from-orange-400 to-orange-600' },
         { name: 'WebStorm', level: 100, color: 'from-purple-400 to-purple-600' },
         { name: 'VS Code', level: 100, color: 'from-blue-400 to-blue-600' },
-        { name: 'Vite', level: 100, color: 'from-blue-500 to-blue-700' },
       ]
     }
   }
@@ -62,7 +63,7 @@ const Skills = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Skills & Technologies
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-gray-500 to-purple-600 mx-auto mb-8"></div>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Here are the technologies and tools I work with to bring ideas to life
           </p>
@@ -75,9 +76,9 @@ const Skills = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 m-2 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 m-2 rounded-lg font-semibold transition-all duration-300 cursor-pointer ${
                   activeCategory === category
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-gray-500 to-purple-600 text-white shadow-lg'
                     : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                 }`}
               >
@@ -96,14 +97,6 @@ const Skills = () => {
                 <div className="flex justify-between items-center mb-3">
                   <h3 className="text-white font-semibold text-lg">{skill.name}</h3>
                 </div>
-                {/*<div className="w-full bg-gray-700 rounded-full h-2">*/}
-                {/*  <div*/}
-                {/*    className={`h-2 bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ${*/}
-                {/*      isVisible ? 'w-full' : 'w-0'*/}
-                {/*    }`}*/}
-                {/*    style={{ width: isVisible ? `${skill.level}%` : '0%' }}*/}
-                {/*  ></div>*/}
-                {/*</div>*/}
               </div>
             ))}
           </div>

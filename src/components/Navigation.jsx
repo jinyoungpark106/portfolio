@@ -24,15 +24,13 @@ const Navigation = () => {
     }`}>
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-blue-400">
-            Portfolio
-          </div>
+          <div className="text-2xl font-bold text-blue-400"/>
           <div className="hidden md:flex space-x-8">
             {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="text-gray-300 hover:text-blue-400 transition-colors duration-200 capitalize"
+                className="text-gray-300 hover:text-blue-400 transition-colors duration-200 capitalize cursor-pointer"
               >
                 {item}
               </button>

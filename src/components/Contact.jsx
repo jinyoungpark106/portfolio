@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -63,17 +64,11 @@ const Contact = () => {
       title: 'Location',
       value: 'Langley, BC',
     },
-    // {
-    //   icon: '💼',
-    //   title: 'LinkedIn',
-    //   value: 'linkedin.com/in/jinyoung',
-    //   link: 'https://linkedin.com/in/jinyoung'
-    // }
   ]
 
   const socialLinks = [
-    { name: 'GitHub', icon: '🐙', url: 'https://github.com/jinyoungpark106' },
-    { name: 'LinkedIn', icon: '💼', url: 'https://www.linkedin.com/in/jinyoung-park-629353b5/' },
+    { name: 'GitHub', icon: <FaGithub size={24}/>, url: 'https://github.com/jinyoungpark106' },
+    { name: 'LinkedIn', icon: <FaLinkedin size={24}/>, url: 'https://www.linkedin.com/in/jinyoung-park-629353b5/' },
   ]
 
   return (
@@ -83,7 +78,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Get In Touch
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-gray-500 to-purple-600 mx-auto mb-8"></div>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you!
           </p>
@@ -139,7 +134,7 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-white font-semibold mb-2">
-                    Name
+                    Name *
                   </label>
                   <input
                     type="text"
@@ -154,7 +149,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-white font-semibold mb-2">
-                    Email
+                    Email *
                   </label>
                   <input
                     type="email"
@@ -171,7 +166,7 @@ const Contact = () => {
               
               <div>
                 <label htmlFor="subject" className="block text-white font-semibold mb-2">
-                  Subject
+                  Subject *
                 </label>
                 <input
                   type="text"
@@ -187,7 +182,7 @@ const Contact = () => {
               
               <div>
                 <label htmlFor="message" className="block text-white font-semibold mb-2">
-                  Message
+                  Message *
                 </label>
                 <textarea
                   id="message"
@@ -204,7 +199,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-gray-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-gray-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>

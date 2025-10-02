@@ -32,7 +32,7 @@ const Projects = () => {
       category: 'fullstack',
       liveUrl: '#',
       githubUrl: '#',
-      featured: true
+      featured: false
     },
     {
       id: 2,
@@ -43,7 +43,7 @@ const Projects = () => {
       category: 'frontend',
       liveUrl: '#',
       githubUrl: '#',
-      featured: true
+      featured: false
     },
     {
       id: 3,
@@ -89,18 +89,7 @@ const Projects = () => {
       githubUrl: '#',
       featured: false
     }
-  ]
-
-  const filters = [
-    { key: 'all', label: 'All Projects' },
-    { key: 'frontend', label: 'Frontend' },
-    { key: 'backend', label: 'Backend' },
-    { key: 'fullstack', label: 'Full Stack' }
-  ]
-
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter)
+  ];
 
   return (
     <section id="projects" className="py-20 bg-gray-800">
@@ -109,33 +98,15 @@ const Projects = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             My Projects
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-gray-500 to-purple-600 mx-auto mb-8"></div>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Here are some of my recent projects that showcase my skills and experience
           </p>
         </div>
 
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center mb-12">
-            {filters.map((filter) => (
-              <button
-                key={filter.key}
-                onClick={() => setActiveFilter(filter.key)}
-                className={`px-6 py-3 m-2 rounded-lg font-semibold transition-all duration-300 ${
-                  activeFilter === filter.key
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
-                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                }`}
-              >
-                {filter.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
+            {projects.map((project, index) => (
               <div
                 key={project.id}
                 className={`bg-gray-900 rounded-lg overflow-hidden hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
@@ -164,7 +135,7 @@ const Projects = () => {
                   <div className="flex space-x-4">
                     <a
                       href={project.liveUrl}
-                      className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center py-2 px-4 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+                      className="flex-1 bg-gradient-to-r from-gray-500 to-purple-600 text-white text-center py-2 px-4 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
                     >
                       Live Demo
                     </a>
@@ -178,13 +149,6 @@ const Projects = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* View More Button */}
-          <div className="text-center mt-12">
-            <button className="px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-lg hover:bg-blue-400 hover:text-white transition-all duration-300 transform hover:scale-105">
-              View All Projects on GitHub
-            </button>
           </div>
         </div>
       </div>

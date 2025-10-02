@@ -40,27 +40,27 @@ const Hero = () => {
       
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             Hi, I'm Jinyoung
           </h1>
           <h2 ref={textRef} className="text-2xl md:text-3xl text-gray-300 mb-8">
             Web Developer
           </h2>
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-            I create beautiful, responsive, and user-friendly web applications using modern technologies like React, Javascript, and more.
+            I create beautiful, responsive, and user-friendly web applications using modern technologies like React, Javascript, Vite, tailwind and more.
           </p>
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={scrollToProjects}
-            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="px-8 py-4 bg-gradient-to-r from-gray-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
           >
             View My Work
           </button>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-lg hover:bg-blue-400 hover:text-white transition-all duration-300 transform hover:scale-105"
+            className="px-8 py-4 border-2 border-gray-400 text-blue-400 font-semibold rounded-lg hover:bg-blue-400 hover:text-white transition-all duration-300 transform hover:scale-105 cursor-pointer"
           >
             Get In Touch
           </button>
