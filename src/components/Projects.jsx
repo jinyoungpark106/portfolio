@@ -25,10 +25,10 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.',
-      image: '🛒',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      title: 'English Premier League Score',
+      description: 'An English Premier League information platform built with React, Node.js, and Firebase. Features include match results, team and player statistics, league standings, and match schedules.',
+      image: '⚽',
+      technologies: ['React', 'Typescript', 'Firebase', 'Vite', 'Tailwind CSS'],
       category: 'fullstack',
       liveUrl: '#',
       githubUrl: '#',

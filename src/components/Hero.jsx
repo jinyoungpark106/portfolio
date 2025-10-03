@@ -54,7 +54,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={scrollToProjects}
-            className="px-8 py-4 bg-gradient-to-r from-gray-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
+            className="px-8 py-4 bg-gradient-to-r from-gray-500 to-purple-600 text-white font-semibold rounded-lg hover:from-gray-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
           >
             View My Work
           </button>

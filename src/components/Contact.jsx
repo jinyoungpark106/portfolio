@@ -98,7 +98,7 @@ const Contact = () => {
                 <a
                   key={index}
                   href={info.link}
-                  className="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105"
+                  className="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg"
                 >
                   <div className="text-2xl">{info.icon}</div>
                   <div>
@@ -199,7 +199,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-gray-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-gray-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                className="w-full bg-gradient-to-r from-gray-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-gray-600 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>

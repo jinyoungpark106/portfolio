@@ -92,7 +92,7 @@ const Skills = () => {
             {skillCategories[activeCategory].skills.map((skill, index) => (
               <div
                 key={index}
-                className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105"
+                className="bg-gray-800 p-6 rounded-lg"
               >
                 <div className="flex justify-between items-center mb-3">
                   <h3 className="text-white font-semibold text-lg">{skill.name}</h3>

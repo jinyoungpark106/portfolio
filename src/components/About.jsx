@@ -61,7 +61,7 @@ const About = () => {
 
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors duration-300">
+                <div key={index} className="text-center p-4 bg-gray-700 rounded-lg">
                   <div className="text-2xl font-bold text-blue-300 mb-2">{stat.number}</div>
                   <div className="text-gray-300 text-sm">{stat.label}</div>
                 </div>
