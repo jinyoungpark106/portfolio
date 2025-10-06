@@ -24,3 +24,16 @@ Frontend: React, javascript, Vite, Tailwind CSS
 Hosting: Firebase
 
 Version Control: Git & GitHub
+
+
+## 🌐 Live Demo
+
+👉 https://portfolio-jinyoung.web.app/
+
+## 💻 GitHub Repository
+
+👉 https://github.com/jinyoungpark106/portfolio
+
+📷 Preview
+
+![Portfolio Preview](./public/preview.png)
