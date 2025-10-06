@@ -1,26 +1,26 @@
-# ⚽ English Premier League Info
+🧑‍💻 Personal Portfolio Website
+📌 Overview
 
-A web application that provides real-time information about the **English Premier League (EPL)** — including league standings, match scores, team details, and player statistics.
+This is my personal portfolio website built with React and deployed on Firebase.
+It showcases my projects, skills, and experience as a web developer.
+The website is designed to be simple, responsive, and user-friendly.
 
-## 🚀 Features
+🚀 Features
 
-- 🏆 View current **league standings**
-- ⚽ See latest **match results**
-- 👕 Browse **team details** and logos
-- 📅 Check **match schedules**
-- 📊 Compare team **statistics and performance**
+💼 Projects Section – Displays my main web development projects with live demos and GitHub links.
 
-## 🛠️ Tech Stack
+🧠 Tech Stack Section – Highlights the technologies I use (React, TypeScript, Firebase, Node.js, etc.).
 
-- **Frontend:** React, TypeScript, Tailwind CSS
-- **Backend:** Node.js (Vercel Serverless API)
-- **Database:** Firebase (Firestore)
-- **Hosting:** Firebase Hosting
+📄 About Me Section – Introduces who I am and what I love to build.
 
-## 🌐 Live Demo
+🌐 Contact Section – Links to my GitHub, LinkedIn, and other social profiles.
 
-👉 https://football-league-info.web.app/
+📱 Responsive Design – Works perfectly on both desktop and mobile.
 
-## 💻 GitHub Repository
+🛠️ Tech Stack
 
-👉 https://github.com/jinyoungpark106/soccer-league
+Frontend: React, javascript, Vite, Tailwind CSS
+
+Hosting: Firebase
+
+Version Control: Git & GitHub
