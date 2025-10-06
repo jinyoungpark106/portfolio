@@ -28,11 +28,11 @@ const Projects = () => {
       title: 'English Premier League Score',
       description: 'An English Premier League information platform built with React, Node.js, and Firebase. Features include match results, team and player statistics, league standings, and match schedules.',
       image: '⚽',
-      technologies: ['React', 'Typescript', 'Firebase', 'Vite', 'Tailwind CSS'],
+      technologies: ['React', 'Typescript', 'Vite', 'Tailwind CSS', 'Firebase', 'Vercel API'],
       category: 'fullstack',
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
+      liveUrl: 'https://football-league-info.web.app',
+      githubUrl: 'https://github.com/jinyoungpark106/soccer-league',
+      isShowBtn: true,
     },
     {
       id: 2,
@@ -43,7 +43,7 @@ const Projects = () => {
       category: 'frontend',
       liveUrl: '#',
       githubUrl: '#',
-      featured: false
+      isShowBtn: false,
     },
     {
       id: 3,
@@ -54,7 +54,7 @@ const Projects = () => {
       category: 'frontend',
       liveUrl: '#',
       githubUrl: '#',
-      featured: false
+      isShowBtn: false,
     },
     {
       id: 4,
@@ -65,7 +65,7 @@ const Projects = () => {
       category: 'backend',
       liveUrl: '#',
       githubUrl: '#',
-      featured: false
+      isShowBtn: false,
     },
     {
       id: 5,
@@ -76,7 +76,7 @@ const Projects = () => {
       category: 'frontend',
       liveUrl: '#',
       githubUrl: '#',
-      featured: false
+      isShowBtn: false,
     },
     {
       id: 6,
@@ -87,7 +87,7 @@ const Projects = () => {
       category: 'fullstack',
       liveUrl: '#',
       githubUrl: '#',
-      featured: false
+      isShowBtn: false,
     }
   ];
 
@@ -109,9 +109,7 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className={`bg-gray-900 rounded-lg overflow-hidden hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
-                  project.featured ? 'ring-2 ring-blue-500' : ''
-                }`}
+                className={`bg-gray-900 rounded-lg overflow-hidden hover:bg-gray-700}`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="p-6">
@@ -131,21 +129,24 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-
+                  {project.isShowBtn &&
                   <div className="flex space-x-4">
                     <a
                       href={project.liveUrl}
-                      className="flex-1 bg-gradient-to-r from-gray-500 to-purple-600 text-white text-center py-2 px-4 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+                      className="flex-1 bg-gradient-to-r from-gray-500 to-purple-600 text-white text-center py-2 px-4 rounded-lg hover:from-gray-600 hover:to-purple-700 transition-all duration-300"
+                      target="_blank"
                     >
                       Live Demo
                     </a>
                     <a
                       href={project.githubUrl}
                       className="flex-1 border border-gray-600 text-gray-300 text-center py-2 px-4 rounded-lg hover:bg-gray-600 hover:text-white transition-all duration-300"
+                      target="_blank"
                     >
                       GitHub
                     </a>
                   </div>
+                  }
                 </div>
               </div>
             ))}
