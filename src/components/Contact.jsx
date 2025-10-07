@@ -1,15 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,23 +32,38 @@ const Contact = () => {
   }, [])
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+    const { name, value } = e.target;
+    setFormData(prev => ({...prev, [name]: value}));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    alert('Thank you for your message! I\'ll get back to you soon.')
-    setFormData({ name: '', email: '', subject: '', message: '' })
-    setIsSubmitting(false)
-  }
+    // setIsSubmitting(true)
+    //
+    // // Simulate form submission
+    // await new Promise(resolve => setTimeout(resolve, 2000))
+    //
+    // alert('Thank you for your message! I\'ll get back to you soon.')
+    // setFormData({ name: '', email: '', subject: '', message: '' })
+    // setIsSubmitting(false)
+
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAIL_SERVICE_ID,
+      import.meta.env.VITE_EMAIL_TEMPLATE_ID,
+      formRef.current,
+      {publicKey: import.meta.env.VITE_EMAIL_PUBLIC_KEY}
+    ).then(() => {
+        // setIsEmailModal(true);
+        setFormData(    {name: '', email: '', subject: '', message: ''});
+      },
+      (error) => {
+        // setIsEmailFailModal(true);
+        console.log('FAILED...', error.text);
+      }
+    );
+
+
+  };
 
   const contactInfo = [
     {
@@ -130,7 +147,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-white font-semibold mb-2">
