@@ -4,6 +4,8 @@ import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isEmailModal, setIsEmailModal] = useState(false);
+  const [emailContent, setEmailContent] = useState(['', '']);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,31 +40,29 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // setIsSubmitting(true)
-    //
-    // // Simulate form submission
-    // await new Promise(resolve => setTimeout(resolve, 2000))
-    //
-    // alert('Thank you for your message! I\'ll get back to you soon.')
-    // setFormData({ name: '', email: '', subject: '', message: '' })
-    // setIsSubmitting(false)
-
+    setIsSubmitting(true)
     emailjs.sendForm(
       import.meta.env.VITE_EMAIL_SERVICE_ID,
       import.meta.env.VITE_EMAIL_TEMPLATE_ID,
       formRef.current,
       {publicKey: import.meta.env.VITE_EMAIL_PUBLIC_KEY}
     ).then(() => {
-        // setIsEmailModal(true);
+        setIsEmailModal(true);
+        setEmailContent(['Email Sent!', 'Your message has been sent successfully.']);
         setFormData(    {name: '', email: '', subject: '', message: ''});
+        setIsSubmitting(false)
       },
       (error) => {
-        // setIsEmailFailModal(true);
+        setIsEmailModal(true);
+        setEmailContent(['Email Failed', 'There was a problem sending your message.']);
         console.log('FAILED...', error.text);
+        setIsSubmitting(false)
       }
     );
+  };
 
-
+  const handleCloseModal = () => {
+    setIsEmailModal(false);
   };
 
   const contactInfo = [
@@ -224,6 +224,30 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {isEmailModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-xl shadow-2xl max-w-md w-full transform transition-all">
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 mb-4 rounded-full bg-green-100 flex items-center justify-center">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{emailContent[0]}</h3>
+              <p className="text-gray-600 text-center mb-6">
+                {emailContent[1]}
+              </p>
+              <button
+                  onClick={handleCloseModal}
+                  className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="mt-20 pt-8 border-t border-gray-800">
