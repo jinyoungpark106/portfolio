@@ -8,7 +8,7 @@ import Contact from './components/Contact'
 
 function App() {
   return (
-    <div className={'pt-16 overflow-y-auto justify-center min-h-screen'}>
+    <div className={'overflow-y-auto justify-center min-h-screen'}>
       <Navigation />
       <Hero />
       <About />
