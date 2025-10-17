@@ -41,7 +41,7 @@ const Navigation = () => {
     </nav>
     {isOpen &&
       <div
-        className={`fixed top-0 right-0 h-full w-48 bg-gray-800 text-white transform z-[9999]
+        className={`fixed top-0 right-0 w-full h-[100svh] bg-gray-800 text-white transform z-[9999]
           ${isOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-300`}
       >
         <button
